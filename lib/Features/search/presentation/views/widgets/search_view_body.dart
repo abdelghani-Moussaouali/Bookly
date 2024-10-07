@@ -2,7 +2,7 @@ import 'package:ebook/Features/home/presentation/views/widgets/best_seller_list_
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 
 import '../../../../../core/utils/styles.dart';
@@ -14,11 +14,12 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           CustomSearchTextField(),
           SizedBox(
             height: 16,
