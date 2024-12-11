@@ -1,13 +1,15 @@
-// import 'package:dio/dio.dart';
+import 'package:dio/dio.dart';
 
-// class ApiService {
-//   final _baseUrl = 'https://www.googleapis.com/books/v1/';
-//   final Dio _dio;
+class ApiService {
+  ApiService(this._dio);
+  // final _baseUrl = 'https://www.googleapis.com/books/v1/volumes?';
+  final _baseUrl = 'http://192.168.56.1:8000/api/book/';
 
-//   ApiService(this._dio);
+final Dio _dio;
 
-//   Future<Map<String, dynamic>> get({required String endPoint}) async {
-//     var response = await _dio.get('$_baseUrl$endPoint');
-//     return response.data;
-//   }
-// }
+  Future<dynamic> get({required String endPint}) async { //
+    // var response = await _dio.get('$_baseUrl$endPint');
+    var response = await _dio.get(_baseUrl);
+    return response.data;
+  } 
+}

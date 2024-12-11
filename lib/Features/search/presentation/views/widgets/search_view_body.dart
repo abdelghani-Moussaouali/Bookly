@@ -1,22 +1,16 @@
-import 'package:ebook/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:ebook/Features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-
-
-
 import '../../../../../core/utils/styles.dart';
-
 import 'custom_search_text_field.dart';
-
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
-
+  const SearchViewBody({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
-
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: EdgeInsets.only(left: 30, right: 30, top: 60),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,25 +30,6 @@ class SearchViewBody extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: BookListViewItem(),
-         
-        );
-      },
     );
   }
 }

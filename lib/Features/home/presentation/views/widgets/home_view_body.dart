@@ -1,33 +1,30 @@
-
 import 'package:ebook/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 import 'best_seller_list_view.dart';
 
 import 'custom_app_bar.dart';
-import 'featured_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return const CustomScrollView(
-      physics:  BouncingScrollPhysics(
-        
-      ),
+      physics: AlwaysScrollableScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  [
+            children: [
               Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: 30,
                   ),
                   child: CustomAppBar()),
-              FeaturedBooksListView(),
-             
+              // FeaturedBooksListView(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
@@ -41,9 +38,9 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-         SliverFillRemaining(
+        SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: EdgeInsets.only(right: 5, left: 16),
             child: BestSellerListView(),
           ),
         ),
@@ -51,3 +48,22 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
+
+//  Padding(
+//           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+//           child: GestureDetector(
+//             onTap: () {
+//               // ignore: prefer_const_constructors
+//               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+//                   content: const Text(
+//                 'wefwefwef',
+//                 style: TextStyle(color: Colors.red),
+//               )));
+//             },
+//             child: const CircleAvatar(
+//               backgroundColor: Colors.green,
+//               radius: 28,
+//               child: Icon(Icons.add),
+//             ),
+//           ),
+//         ),
